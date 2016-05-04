@@ -5,7 +5,7 @@
   <%= @genre.gname %>
 </p>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Album</th>
@@ -26,5 +26,5 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_genre_path(@genre) %> |
-<%= link_to 'Back', genres_path %>
+<%= link_to 'Edit', edit_genre_path(@genre), class: 'btn btn-warning btn-xs' %> |
+<%= link_to 'Back', genres_path, class: 'btn btn-info btn-xs' %>

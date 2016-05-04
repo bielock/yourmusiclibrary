@@ -3,13 +3,13 @@
 <h1>Your Albums</h1>
 
 <h3>
-  <%= link_to "Artist", artists_path %>
-  <%= link_to "Album", albums_path %>
-  <%= link_to "Genre", genres_path %>
-  <%= link_to "All Tracks", tracks_path %>
+  <%= link_to "Artist", artists_path, class: 'btn btn-default' %>
+  <%= link_to "Album", albums_path, class: 'btn btn-default' %>
+  <%= link_to "Genre", genres_path, class: 'btn btn-default' %>
+  <%= link_to "All Tracks", tracks_path, class: 'btn btn-default' %>
 </h3>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Album</th>
@@ -27,8 +27,8 @@
         <td><%= album.artist.name %></td>
         <td><%= album.year %></td>
         <td><%= album.genre.gname %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_album_path(album), class: 'btn btn-warning btn-xs' %></td>
+        <td><%= link_to 'Delete', album, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,5 +36,5 @@
 
 <br>
 
-<%= link_to 'New Album', new_album_path %>
+<%= link_to 'New Album', new_album_path, class: 'btn btn-success' %>
 

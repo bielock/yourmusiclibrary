@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tracks</h1>
+<h1>Your Tracks</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Track</th>
@@ -22,8 +22,8 @@
         <td><%= track.album.title %></td>
         <td><%= track.album.genre.gname %></td>
         <td><%= track.album.year%></td>
-        <td><%= link_to 'Edit', edit_track_path(track) %></td>
-        <td><%= link_to 'Delete', track, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_track_path(track), class: 'btn btn-warning btn-xs' %></td>
+        <td><%= link_to 'Delete', track, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-xs' %></td>
       </tr>
     <% end %>
   </tbody>
@@ -31,6 +31,6 @@
 
 <br>
 
-<%= link_to 'New Track', new_track_path %>
-<%= link_to 'Back', albums_path %>
+<%= link_to 'New Track', new_track_path, class: 'btn btn-success' %>
+<%= link_to 'Back', albums_path, class: 'btn btn-info' %>
 
