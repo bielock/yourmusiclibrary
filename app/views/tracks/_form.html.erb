@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :album_id %><br>
-    <%= f.collection_select :album_id, Album.order(:title),:id,:title, include_blank: false %>
+    <%= f.collection_select :album_id, current_user.albums.order(:title),:id,:title, include_blank: false %>
   </div>
   <div class="field">
     <%= f.label :track_title %><br>

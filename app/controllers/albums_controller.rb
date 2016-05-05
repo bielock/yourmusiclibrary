@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
   end
 
   def show
-      @album_tracks = Track.where(album_id: @album)
+    @album_tracks = Track.where(album_id: @album)
   end
 
   def new
@@ -21,7 +21,7 @@ class AlbumsController < ApplicationController
     @album = Album.new(album_params)
     @album.user_id = current_user.id
     if @album.save
-        redirect_to @album, notice: 'Album was successfully created.'
+      redirect_to @album, notice: 'Album was successfully created.'
     else
       render :new
     end

@@ -12,7 +12,7 @@
   <% end %>
   <div class="field">
     <%= f.label :artist_id %><br>
-    <%= f.collection_select :artist_id, Artist.order(:name),:id,:name, include_blank: false %>
+    <%= f.collection_select :artist_id, current_user.artists.order(:name),:id,:name, include_blank: false %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
@@ -24,7 +24,7 @@
   </div>
   <div class="field">
     <%= f.label :genre_id %><br>
-    <%= f.collection_select :genre_id, Genre.order(:gname),:id,:gname, include_blank: false %>
+    <%= f.collection_select :genre_id, current_user.genres.order(:gname),:id,:gname, include_blank: false %>
   </div>
   <div class="actions">
     <%= f.submit %>
