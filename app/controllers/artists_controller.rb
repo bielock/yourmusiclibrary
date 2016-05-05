@@ -19,25 +19,24 @@ class ArtistsController < ApplicationController
   def create
     @artist = Artist.new(artist_params)
     @artist.user_id = current_user.id
-
-      if @artist.save
-        redirect_to @artist, notice: 'Artist was successfully created.'
-      else
-        render :new 
-      end
+    if @artist.save
+      redirect_to @artist, notice: 'Artist was successfully created.'
+    else
+      render :new 
+    end
   end
 
   def update
-      if @artist.update(artist_params)
-        redirect_to @artist, notice: 'Artist was successfully updated.'
-      else
-        render :edit
-      end
+    if @artist.update(artist_params)
+      redirect_to @artist, notice: 'Artist was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
     @artist.destroy
-      redirect_to artists_url, notice: 'Artist was successfully destroyed.'
+    redirect_to artists_url, notice: 'Artist was successfully destroyed.'
   end
 
   private

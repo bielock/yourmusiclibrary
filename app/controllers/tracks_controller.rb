@@ -18,26 +18,24 @@ class TracksController < ApplicationController
   def create
     @track = Track.new(track_params)
     @track.user_id = current_user.id
-
-
-      if @track.save
-        redirect_to @track, notice: 'Track was successfully created.'
-      else
-        render :new
-      end
+    if @track.save
+      redirect_to @track, notice: 'Track was successfully created.'
+    else
+      render :new
+    end
   end
 
   def update
-      if @track.update(track_params)
-        redirect_to @track, notice: 'Track was successfully updated.'
-      else
-        render :edit
-      end
+    if @track.update(track_params)
+      redirect_to @track, notice: 'Track was successfully updated.'
+    else
+      render :edit
+    end
   end
 
   def destroy
     @track.destroy
-      redirect_to tracks_url, notice: 'Track was successfully destroyed.'
+    redirect_to tracks_url, notice: 'Track was successfully destroyed.'
   end
 
   private

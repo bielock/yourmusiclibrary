@@ -20,26 +20,25 @@ class AlbumsController < ApplicationController
   def create
     @album = Album.new(album_params)
     @album.user_id = current_user.id
-
-      if @album.save
+    if @album.save
         redirect_to @album, notice: 'Album was successfully created.'
-      else
-        render :new
-      end
+    else
+      render :new
+    end
   end
 
   def update
-      if @album.update(album_params)
-        redirect_to @album, notice: 'Album was successfully updated.'
-      else
-        render :edit
-      end
+    if @album.update(album_params)
+      redirect_to @album, notice: 'Album was successfully updated.'
+    else
+      ender :edit
+    end
   end
 
   def destroy
     @album.destroy
-      redirect_to albums_url, notice: 'Album was successfully destroyed.'
-      head :no_content
+    redirect_to albums_url, notice: 'Album was successfully destroyed.'
+    head :no_content
   end
 
   private
